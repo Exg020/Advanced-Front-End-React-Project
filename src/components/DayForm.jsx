@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
-const DayForm = ({ handleForm }) => {
+const DayForm = ({ trip, setTrip }) => {
 	const [dayTitle, setDayTitle] = useState("");
 	const [dayDate, setDayDate] = useState("");
 
@@ -17,6 +17,16 @@ const DayForm = ({ handleForm }) => {
 			dayDate,
 		});
 	};
+
+	const handleForm = ({dayTitle, dayDate}) => {
+		const newArr = [];
+		newArr.push({dayTitle, dayDate});
+		console.log(newArr);
+    }
+
+
+
+
 	return (
 		<>
 			<Form>

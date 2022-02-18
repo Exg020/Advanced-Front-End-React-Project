@@ -1,27 +1,31 @@
-import { Row } from "react-bootstrap";
+import { useEffect } from "react";
+import { Col, Row } from "react-bootstrap";
 import Day from "./Day";
 import DayForm from "./DayForm";
 import FormModal from "./FormModal";
 
-const Trips = ({ trips }) => {
-	console.log(trips);
+const Trips = ({ trip, setTrip }) => {
+
+	console.log(trip);
 	let dayId = 0;
-	let tripId = 0;
 	return (
 		<>
-			{trips.map((trip) => {
-				return (
-					<Row key={tripId} className='my-container mx-1 my-4 py-2'>
-						<h3>
-							{trip.title} --- {trip.dateRange}{" "}
-							<FormModal title='Add Day' thisForm={<DayForm />} />
-						</h3>
-						{trip.days.map((day) => {
-							return <Day key={dayId++} day={day} />;
-						})}
-					</Row>
-				);
-			})}
+			<Col className='my-container m-2 p-3'>
+				<Row>
+					<Col>
+						{" "}
+						<h2>{trip.title}</h2>
+					</Col>
+					<Col style={{ textAlign: "right" }}>
+						{" "}
+						<h2>{trip.dateRange}</h2>
+					</Col>
+				</Row>
+
+				{trip.days.map((day) => {
+					return <Day key={dayId++} day={day} />;
+				})}
+			</Col>
 		</>
 	);
 };
