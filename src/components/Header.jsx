@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import FormModal from "./FormModal";
 import TripForm from "./TripForm";
 const Header = ({ title }) => {
-	let currentForm = <TripForm />;
 	return (
 		<>
 			<Navbar
@@ -27,10 +26,7 @@ const Header = ({ title }) => {
 					<Navbar.Toggle />
 					<Navbar.Collapse className='justify-content-end'>
 						<Navbar.Text>
-							<FormModal
-								title='Add Trip'
-								thisForm={currentForm}
-							/>
+							<FormModal title='Add Trip' thisForm={<TripForm />} />
 						</Navbar.Text>
 					</Navbar.Collapse>
 				</Container>

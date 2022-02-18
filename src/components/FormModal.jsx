@@ -9,7 +9,7 @@ const FormModal = ({ title, thisForm }) => {
 	return (
 		<>
 			<Button variant='primary' onClick={handleShow}>
-				Add Trip
+				{title}
 			</Button>
 
 			<Modal

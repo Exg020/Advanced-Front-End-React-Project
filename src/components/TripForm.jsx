@@ -26,7 +26,7 @@ const TripForm = ({ handleForm }) => {
 						type='text'
 						value={tripTitle}
 						onChange={(e) => setTripTitle(e.target.value)}
-						placeholder='Spain, Italy'
+						placeholder='My trip to Spain!'
 					/>
 				</Form.Group>
 
